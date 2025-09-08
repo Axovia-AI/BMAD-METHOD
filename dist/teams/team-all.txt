@@ -338,6 +338,7 @@ persona:
   focus: Executing story tasks with precision, updating Dev Agent Record sections only, maintaining minimal context overhead
 core_principles:
   - CRITICAL: Story has ALL info you will need aside from what you loaded during the startup commands. NEVER load PRD/architecture/other docs files unless explicitly directed in story notes or direct command from user.
+  - CRITICAL: ALWAYS check current folder structure before starting your story tasks, don't create new working directory if it already exists. Create new one when you're sure it's a brand new project.
   - CRITICAL: ONLY update story file Dev Agent Record sections (checkboxes/Debug Log/Completion Notes/Change Log)
   - CRITICAL: FOLLOW THE develop-story command when the user tells you to implement the story
   - Numbered Options - Always use numbered lists when presenting choices to the user
@@ -656,6 +657,7 @@ dependencies:
 
 ==================== START: .bmad-core/tasks/advanced-elicitation.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Advanced Elicitation Task
 
 ## Purpose
@@ -777,6 +779,7 @@ Choose a number (0-8) or 9 to proceed:
 
 ==================== START: .bmad-core/tasks/create-doc.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Create Document from Template (YAML Driven)
 
 ## ⚠️ CRITICAL EXECUTION NOTICE ⚠️
@@ -882,6 +885,7 @@ User can type `#yolo` to toggle to YOLO mode (process all sections at once).
 
 ==================== START: .bmad-core/tasks/kb-mode-interaction.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # KB Mode Interaction Task
 
 ## Purpose
@@ -961,6 +965,7 @@ Or ask me about anything else related to BMad-Method!
 
 ==================== START: .bmad-core/data/bmad-kb.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # BMAD™ Knowledge Base
 
 ## Overview
@@ -1063,6 +1068,7 @@ npx bmad-method install
   - **Cline**: VS Code extension with AI features
   - **Roo Code**: Web-based IDE with agent support
   - **GitHub Copilot**: VS Code extension with AI peer programming assistant
+  - **Auggie CLI (Augment Code)**: AI-powered development environment
 
 **Note for VS Code Users**: BMAD-METHOD™ assumes when you mention "VS Code" that you're using it with an AI-powered extension like GitHub Copilot, Cline, or Roo. Standard VS Code without AI capabilities cannot run BMad agents. The installer includes built-in support for Cline and Roo.
 
@@ -1771,6 +1777,7 @@ Use the **expansion-creator** pack to build your own:
 
 ==================== START: .bmad-core/data/elicitation-methods.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Elicitation Methods Data
 
 ## Core Reflective Methods
@@ -1929,6 +1936,7 @@ Use the **expansion-creator** pack to build your own:
 
 ==================== START: .bmad-core/utils/workflow-management.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Workflow Management
 
 Enables BMad orchestrator to manage and execute team workflows.
@@ -2002,6 +2010,7 @@ Agents should be workflow-aware: know active workflow, their role, access artifa
 
 ==================== START: .bmad-core/tasks/create-deep-research-prompt.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Create Deep Research Prompt Task
 
 This task helps create comprehensive research prompts for various types of deep analysis. It can process inputs from brainstorming sessions, project briefs, market research, or specific research questions to generate targeted prompts for deeper investigation.
@@ -2284,6 +2293,7 @@ CRITICAL: collaborate with the user to develop specific, actionable research que
 
 ==================== START: .bmad-core/tasks/document-project.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Document an Existing Project
 
 ## Purpose
@@ -2630,10 +2640,11 @@ Apply the advanced elicitation task after major sections to refine based on user
 ==================== END: .bmad-core/tasks/document-project.md ====================
 
 ==================== START: .bmad-core/tasks/facilitate-brainstorming-session.md ====================
-<!-- Powered by BMAD™ Core -->
----
+## <!-- Powered by BMAD™ Core -->
+
 docOutputLocation: docs/brainstorming-session-results.md
 template: '.bmad-core/templates/brainstorming-output-tmpl.yaml'
+
 ---
 
 # Facilitate Brainstorming Session Task
@@ -3721,6 +3732,7 @@ sections:
 
 ==================== START: .bmad-core/data/brainstorming-techniques.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Brainstorming Techniques Data
 
 ## Creative Expansion
@@ -3761,6 +3773,7 @@ sections:
 
 ==================== START: .bmad-core/tasks/execute-checklist.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Checklist Validation Task
 
 This task provides instructions for validating documentation against checklists. The agent MUST follow these instructions to ensure thorough and systematic validation of documents.
@@ -6034,6 +6047,7 @@ sections:
 
 ==================== START: .bmad-core/checklists/architect-checklist.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Architect Solution Validation Checklist
 
 This checklist serves as a comprehensive framework for the Architect to validate the technical design and architecture before development execution. The Architect should systematically work through each item, ensuring the architecture is robust, scalable, secure, and aligned with the product requirements.
@@ -6476,6 +6490,7 @@ After presenting the report, ask the user if they would like detailed analysis o
 
 ==================== START: .bmad-core/data/technical-preferences.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # User-Defined Preferred Patterns and Preferences
 
 None Listed
@@ -6483,6 +6498,7 @@ None Listed
 
 ==================== START: .bmad-core/tasks/apply-qa-fixes.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # apply-qa-fixes
 
 Implement fixes based on QA results (gate and assessments) for a specific story. This task is for the Dev agent to systematically consume QA outputs and apply code/test changes while only updating allowed sections in the story file.
@@ -6635,6 +6651,7 @@ Fix plan:
 
 ==================== START: .bmad-core/tasks/validate-next-story.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Validate Next Story Task
 
 ## Purpose
@@ -6656,7 +6673,7 @@ To comprehensively validate a story draft before implementation begins, ensuring
 
 ### 1. Template Completeness Validation
 
-- Load `bmad-core/templates/story-tmpl.md` and extract all section headings from the template
+- Load `.bmad-core/templates/story-tmpl.yaml` and extract all section headings from the template
 - **Missing sections check**: Compare story sections against template sections to verify all required sections are present
 - **Placeholder validation**: Ensure no template placeholders remain unfilled (e.g., `{{EpicNum}}`, `{{role}}`, `_TBD_`)
 - **Agent section verification**: Confirm all sections from template exist for future agent use
@@ -6773,6 +6790,7 @@ Provide a structured validation report including:
 
 ==================== START: .bmad-core/checklists/story-dod-checklist.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Story Definition of Done (DoD) Checklist
 
 ## Instructions for Developer Agent
@@ -6871,6 +6889,7 @@ Be honest - it's better to flag issues now than have them discovered later.]]
 
 ==================== START: .bmad-core/tasks/brownfield-create-epic.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Create Brownfield Epic Task
 
 ## Purpose
@@ -7035,6 +7054,7 @@ The epic creation is successful when:
 
 ==================== START: .bmad-core/tasks/brownfield-create-story.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Create Brownfield Story Task
 
 ## Purpose
@@ -7186,6 +7206,7 @@ The story creation is successful when:
 
 ==================== START: .bmad-core/tasks/correct-course.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Correct Course Task
 
 ## Purpose
@@ -7260,6 +7281,7 @@ The story creation is successful when:
 
 ==================== START: .bmad-core/tasks/shard-doc.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Document Sharding Task
 
 ## Purpose
@@ -7939,6 +7961,7 @@ sections:
 
 ==================== START: .bmad-core/checklists/change-checklist.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Change Navigation Checklist
 
 **Purpose:** To systematically guide the selected Agent and user through the analysis and planning required when a significant change (pivot, tech issue, missing requirement, failed story) is identified during the BMad workflow.
@@ -8125,6 +8148,7 @@ Keep it action-oriented and forward-looking.]]
 
 ==================== START: .bmad-core/checklists/pm-checklist.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Product Manager (PM) Requirements Checklist
 
 This checklist serves as a comprehensive framework to ensure the Product Requirements Document (PRD) and Epic definitions are complete, well-structured, and appropriately scoped for MVP development. The PM should systematically work through each item during the product definition process.
@@ -8640,6 +8664,7 @@ sections:
 
 ==================== START: .bmad-core/checklists/po-master-checklist.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Product Owner (PO) Master Validation Checklist
 
 This checklist serves as a comprehensive framework for the Product Owner to validate project plans before development execution. It adapts intelligently based on project type (greenfield vs brownfield) and includes UI/UX considerations when applicable.
@@ -9076,6 +9101,7 @@ After presenting the report, ask if the user wants:
 
 ==================== START: .bmad-core/tasks/nfr-assess.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # nfr-assess
 
 Quick NFR validation focused on the core four: security, performance, reliability, maintainability.
@@ -9423,6 +9449,7 @@ performance_deep_dive:
 
 ==================== START: .bmad-core/tasks/qa-gate.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # qa-gate
 
 Create or update a quality gate decision file for a story based on review findings.
@@ -9588,6 +9615,7 @@ Gate: CONCERNS → qa.qaLocation/gates/{epic}.{story}-{slug}.yml
 
 ==================== START: .bmad-core/tasks/review-story.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # review-story
 
 Perform a comprehensive test architecture review with quality gate decision. This adaptive, risk-aware review creates both a story update and a detailed gate file.
@@ -9906,6 +9934,7 @@ After review:
 
 ==================== START: .bmad-core/tasks/risk-profile.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # risk-profile
 
 Generate a comprehensive risk assessment matrix for a story implementation using probability × impact analysis.
@@ -10263,6 +10292,7 @@ Risk profile: qa.qaLocation/assessments/{epic}.{story}-risk-{YYYYMMDD}.md
 
 ==================== START: .bmad-core/tasks/test-design.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # test-design
 
 Create comprehensive test scenarios with appropriate test level recommendations for story implementation.
@@ -10441,6 +10471,7 @@ Before finalizing, verify:
 
 ==================== START: .bmad-core/tasks/trace-requirements.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # trace-requirements
 
 Map story requirements to test cases using Given-When-Then patterns for comprehensive traceability.
@@ -10815,6 +10846,7 @@ optional_fields_examples:
 
 ==================== START: .bmad-core/tasks/create-next-story.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Create Next Story Task
 
 ## Purpose
@@ -10931,6 +10963,7 @@ ALWAYS cite source documents: `[Source: architecture/{filename}.md#{section}]`
 
 ==================== START: .bmad-core/checklists/story-draft-checklist.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Story Draft Checklist
 
 The Scrum Master should use this checklist to validate that each story contains sufficient context for a developer agent to implement it successfully, while assuming the dev agent has reasonable capabilities to figure things out.
@@ -11088,6 +11121,7 @@ Be pragmatic - perfect documentation doesn't exist, but it must be enough to pro
 
 ==================== START: .bmad-core/tasks/generate-ai-frontend-prompt.md ====================
 <!-- Powered by BMAD™ Core -->
+
 # Create AI Frontend Prompt Task
 
 ## Purpose
@@ -11657,7 +11691,7 @@ workflow:
         - Dev Agent (New Chat): Address remaining items
         - Return to QA for final approval
 
-    - repeat_development_cycle:
+    - step: repeat_development_cycle
       action: continue_for_all_stories
       notes: |
         Repeat story cycle (SM → Dev → QA) for all epic stories
@@ -11674,7 +11708,7 @@ workflow:
         - Validate epic was completed correctly
         - Document learnings and improvements
 
-    - workflow_end:
+    - step: workflow_end
       action: project_complete
       notes: |
         All stories implemented and reviewed!
@@ -11904,7 +11938,7 @@ workflow:
         - Dev Agent (New Chat): Address remaining items
         - Return to QA for final approval
 
-    - repeat_development_cycle:
+    - step: repeat_development_cycle
       action: continue_for_all_stories
       notes: |
         Repeat story cycle (SM → Dev → QA) for all epic stories
@@ -11921,7 +11955,7 @@ workflow:
         - Validate epic was completed correctly
         - Document learnings and improvements
 
-    - workflow_end:
+    - step: workflow_end
       action: project_complete
       notes: |
         All stories implemented and reviewed!
@@ -12102,7 +12136,7 @@ workflow:
         - Dev Agent (New Chat): Address remaining items
         - Return to QA for final approval
 
-    - repeat_development_cycle:
+    - step: repeat_development_cycle
       action: continue_for_all_stories
       notes: |
         Repeat story cycle (SM → Dev → QA) for all epic stories
@@ -12119,7 +12153,7 @@ workflow:
         - Validate epic was completed correctly
         - Document learnings and improvements
 
-    - workflow_end:
+    - step: workflow_end
       action: project_complete
       notes: |
         All stories implemented and reviewed!
@@ -12255,12 +12289,12 @@ workflow:
       condition: po_checklist_issues
       notes: "If PO finds issues, return to relevant agent to fix and re-export updated documents to docs/ folder."
 
-    - project_setup_guidance:
+    - step: project_setup_guidance
       action: guide_project_structure
       condition: user_has_generated_ui
       notes: "If user generated UI with v0/Lovable: For polyrepo setup, place downloaded project in separate frontend repo alongside backend repo. For monorepo, place in apps/web or packages/frontend directory. Review architecture document for specific guidance."
 
-    - development_order_guidance:
+    - step: development_order_guidance
       action: guide_development_sequence
       notes: "Based on PRD stories: If stories are frontend-heavy, start with frontend project/directory first. If backend-heavy or API-first, start with backend. For tightly coupled features, follow story sequence in monorepo setup. Reference sharded PRD epics for development order."
 
@@ -12328,7 +12362,7 @@ workflow:
         - Dev Agent (New Chat): Address remaining items
         - Return to QA for final approval
 
-    - repeat_development_cycle:
+    - step: repeat_development_cycle
       action: continue_for_all_stories
       notes: |
         Repeat story cycle (SM → Dev → QA) for all epic stories
@@ -12345,7 +12379,7 @@ workflow:
         - Validate epic was completed correctly
         - Document learnings and improvements
 
-    - workflow_end:
+    - step: workflow_end
       action: project_complete
       notes: |
         All stories implemented and reviewed!
@@ -12548,7 +12582,7 @@ workflow:
         - Dev Agent (New Chat): Address remaining items
         - Return to QA for final approval
 
-    - repeat_development_cycle:
+    - step: repeat_development_cycle
       action: continue_for_all_stories
       notes: |
         Repeat story cycle (SM → Dev → QA) for all epic stories
@@ -12565,7 +12599,7 @@ workflow:
         - Validate epic was completed correctly
         - Document learnings and improvements
 
-    - workflow_end:
+    - step: workflow_end
       action: project_complete
       notes: |
         All stories implemented and reviewed!
@@ -12708,7 +12742,7 @@ workflow:
       condition: po_checklist_issues
       notes: "If PO finds issues, return to relevant agent to fix and re-export updated documents to docs/ folder."
 
-    - project_setup_guidance:
+    - step: project_setup_guidance
       action: guide_project_structure
       condition: user_has_generated_ui
       notes: "If user generated UI with v0/Lovable: For polyrepo setup, place downloaded project in separate frontend repo. For monorepo, place in apps/web or frontend/ directory. Review architecture document for specific guidance."
@@ -12777,7 +12811,7 @@ workflow:
         - Dev Agent (New Chat): Address remaining items
         - Return to QA for final approval
 
-    - repeat_development_cycle:
+    - step: repeat_development_cycle
       action: continue_for_all_stories
       notes: |
         Repeat story cycle (SM → Dev → QA) for all epic stories
@@ -12794,7 +12828,7 @@ workflow:
         - Validate epic was completed correctly
         - Document learnings and improvements
 
-    - workflow_end:
+    - step: workflow_end
       action: project_complete
       notes: |
         All stories implemented and reviewed!
