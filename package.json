@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "bmad-method",
+  "name": "@axovia-ai/bmad-extension",
   "version": "4.44.0",
-  "description": "Breakthrough Method of Agile AI-driven Development",
+  "description": "Axovia AI Extension for BMAD Method - Breakthrough Method of Agile AI-driven Development",
   "keywords": [
     "agile",
     "ai",
@@ -14,13 +14,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bmadcode/BMAD-METHOD.git"
+    "url": "git+https://github.com/Axovia-AI/BMAD-METHOD.git"
   },
   "license": "MIT",
   "author": "Brian (BMad) Madison",
   "main": "tools/cli.js",
   "bin": {
     "bmad": "tools/bmad-npx-wrapper.js",
+    "bmad-extension": "tools/bmad-npx-wrapper.js",
     "bmad-method": "tools/bmad-npx-wrapper.js"
   },
   "scripts": {
