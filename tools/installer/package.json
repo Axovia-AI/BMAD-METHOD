@@ -1,5 +1,5 @@
 {
-  "name": "bmad-method",
+  "name": "@axovia-ai/bmad-extension",
   "version": "4.44.0",
   "description": "BMad Method installer - AI-powered Agile development framework",
   "keywords": [
@@ -11,20 +11,20 @@
     "installer",
     "agents"
   ],
-  "homepage": "https://github.com/bmad-team/bmad-method#readme",
+  "homepage": "https://github.com/Axovia-AI/BMAD-METHOD#readme",
   "bugs": {
-    "url": "https://github.com/bmad-team/bmad-method/issues"
+    "url": "https://github.com/Axovia-AI/BMAD-METHOD/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bmad-team/bmad-method.git"
+    "url": "https://github.com/Axovia-AI/BMAD-METHOD.git"
   },
   "license": "MIT",
   "author": "BMad Team",
   "main": "lib/installer.js",
   "bin": {
-    "bmad": "./bin/bmad.js",
-    "bmad-method": "./bin/bmad.js"
+    "@axovia-ai/bmad-extension": "./bin/bmad.js",
+    "bmad": "./bin/bmad.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

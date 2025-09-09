@@ -1,6 +1,6 @@
-# BMAD-METHOD™: Universal AI Agent Framework
+# BMAD-METHOD™: Universal AI Agent Framework (Axovia AI Extension)
 
-[![Version](https://img.shields.io/npm/v/bmad-method?color=blue&label=version)](https://www.npmjs.com/package/bmad-method)
+[![Version](https://img.shields.io/npm/v/@axovia-ai/bmad-extension?color=blue&label=version)](https://www.npmjs.com/package/@axovia-ai/bmad-extension)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen)](https://nodejs.org)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Community-7289da?logo=discord&logoColor=white)](https://discord.gg/gk8jAdXWmj)
@@ -52,7 +52,7 @@ This two-phase approach eliminates both **planning inconsistency** and **context
 **Stay up-to-date effortlessly!** If you already have BMAD-METHOD™ installed in your project, simply run:
 
 ```bash
-npx bmad-method install
+npx @axovia-ai/bmad-extension install
 # OR
 git pull
 npm run install:bmad
@@ -74,9 +74,9 @@ This makes it easy to benefit from the latest improvements, bug fixes, and new a
 **Just run one of these commands:**
 
 ```bash
-npx bmad-method install
+npx @axovia-ai/bmad-extension install
 # OR explicitly use stable tag:
-npx bmad-method@stable install
+npx @axovia-ai/bmad-extension@stable install
 # OR if you already have BMad installed:
 git pull
 npm run install:bmad
@@ -104,7 +104,7 @@ This single command handles:
 ### Alternative: Clone and Build
 
 ```bash
-git clone https://github.com/bmadcode/bmad-method.git
+git clone https://github.com/Axovia-AI/BMAD-METHOD.git
 npm run install:bmad # build and install all to a destination folder
 ```
 
